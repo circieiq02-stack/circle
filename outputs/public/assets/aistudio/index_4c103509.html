@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#d92735">
+<title>CIRCLE.iq — Everything connects</title>
+<meta name="description" content="Iraq’s creative platform: services, talent and community.">
+<link rel="icon" href="circle-mark.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--red:#d92735;--ink:#0b0b0d;--mut:#5f6168;--line:#ececec}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f4f5;color:var(--ink);font:400 15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+.app{max-width:480px;min-height:100vh;margin:0 auto;background:#fff;position:relative;padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+header{display:flex;align-items:center;gap:10px;padding:calc(14px + env(safe-area-inset-top,0px)) 20px 8px}
+header img{width:32px}header b{display:block;font-size:16px;letter-spacing:.05em;line-height:1.1}header small{font-size:11px;color:var(--mut);letter-spacing:.06em}
+main{padding:0 20px 20px}
+.v{display:none}.v.on{display:block}
+h1{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:6px 0 14px}
+h2{font-size:17px;margin:0}
+.k{font-size:12px;font-weight:600;color:var(--red);letter-spacing:.06em;margin-top:8px}
+.t{font-size:12px;color:var(--mut)}.r{color:var(--red)}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:20px 0 10px}.sec a{font-size:12px;color:var(--red);font-weight:600;text-decoration:none}
+.search{display:flex;align-items:center;gap:10px;background:#f4f4f5;border-radius:14px;padding:0 14px;height:46px;margin:6px 0}
+.search input{flex:1;border:0;background:transparent;font:inherit;font-size:14px;height:44px;outline:0}
+.search:focus-within{box-shadow:0 0 0 2px var(--red)}
+svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.c{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff;margin-bottom:12px}
+.row{display:flex;align-items:center;gap:12px}
+.av{width:40px;height:40px;border-radius:50%;background:#fdeaec;color:var(--red);font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--red);color:#fff;border:0;border-radius:12px;font-weight:600;padding:0 18px;min-height:44px}
+.btn:hover{background:#b81f2b}
+.ghost{background:#fff;border:1px solid #d9d9dc;border-radius:12px;min-height:44px;padding:0 18px;font-weight:600}
+.poll button{position:relative;width:100%;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:8px;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:13px;text-align:start}
+.poll u{position:absolute;inset:0 auto 0 0;background:#fdeaec;width:0;transition:width .4s}
+.poll span{position:relative}
+.act{display:flex;justify-content:space-between;border-top:1px solid #f0f0f0;margin-top:10px;padding-top:6px}
+.act button{display:flex;align-items:center;gap:6px;border:0;background:none;color:var(--mut);font-size:12px;min-height:44px;padding:0 6px}
+.act button svg{width:18px;height:18px}.act button.on{color:var(--red)}.act button.on svg{fill:currentColor}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat{border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.cat .th{height:56px;border-radius:10px}.cat b{font-size:14px;margin-top:4px}
+.hero{border-radius:20px;background:#0b0b0d;color:#fff;padding:18px;margin:16px 0 18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-20px;top:-20px;width:120px;height:120px;background:var(--red);clip-path:polygon(40% 0,100% 30%,90% 70%,60% 100%,0 60%)}
+.hero p{margin:0;max-width:210px;position:relative;z-index:1}
+.promo{display:flex;gap:12px;align-items:center;background:#fdf1f2;border:1px solid #f6d3d6;border-radius:16px;padding:12px 14px;margin-bottom:12px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px}
+.chip{border:1px solid #e4e4e6;border-radius:99px;padding:0 14px;min-height:40px;background:#fff;font-size:12px;white-space:nowrap}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sk{display:inline-block;border-radius:99px;background:#f4f4f5;font-size:11px;padding:3px 9px;margin:6px 4px 0 0}
+.w{display:flex;gap:6px;margin-top:10px}.w div{flex:1;height:44px;border-radius:8px}
+.cover{height:96px;border-radius:18px;background:#1b1b1f;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;right:-10px;top:-14px;width:150px;height:130px;background:var(--red);clip-path:polygon(35% 0,100% 25%,90% 75%,55% 100%,0 55%)}
+.tabs{display:flex;border-bottom:1px solid var(--line);margin:14px 0 12px}.tabs button{flex:1;border:0;background:none;padding:10px 0;color:#6b6d74;font-size:13px;min-height:44px;border-bottom:2px solid transparent}
+.tabs .on{color:var(--ink);font-weight:700;border-color:var(--red)}
+.tile{flex:1;height:78px;border-radius:12px;color:#fff;padding:8px;font-size:11px;font-weight:600;display:flex;align-items:flex-end}
+.li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f0f0f0;font-size:13px}.li span:last-child{color:var(--mut)}
+.s{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0;font-size:14px}.s svg{width:20px;height:20px;color:var(--mut)}
+nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:480px;height:calc(64px + max(env(safe-area-inset-bottom),12px));background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.04);display:flex;justify-content:space-around;padding:8px 8px max(env(safe-area-inset-bottom),12px);z-index:10}
+nav a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:500;color:#6b6d74;text-decoration:none;width:76px;transition:color .2s}
+nav i{width:56px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+nav a[aria-current]{color:var(--red);font-weight:600}nav a[aria-current] i{background:rgba(217,39,53,.1)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><img src="circle-mark.png" alt="CIRCLE"><div><b>CIRCLE.IQ</b><small>IRAQ’S CREATIVE PLATFORM</small></div></header>
+<main>
+
+<section class="v" id="home">
+<div class="row" style="margin:10px 0 14px"><div class="av" style="width:46px;height:46px;font-size:18px">Z</div><div><div class="t">Good morning</div><div style="font-size:20px;font-weight:700">Welcome, Zahraa</div></div></div>
+<label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><input type="search" placeholder="Search ideas, talent and services" aria-label="Search"></label>
+<div class="sec"><h2>Community</h2><a href="#home">See all</a></div>
+<div class="c row" style="padding:10px 12px"><div class="av">Z</div><div class="search" style="flex:1;margin:0;height:40px"><input placeholder="Share something with the community…" aria-label="Create post"></div></div>
+<article class="c">
+<div class="row"><div class="av">M</div><div><b>Mustafa Jabbar <span class="r">✓</span></b><div class="t">Video editor · Baghdad · 2h</div></div></div>
+<p style="margin:10px 0">Wrapped up a new short-form edit today. What helps a local brand feel memorable online?</p>
+<div class="poll" id="poll"><button data-v="0"><u></u><span>A clear visual identity</span><span class="pc"></span></button><button data-v="1"><u></u><span>Consistent storytelling</span><span class="pc"></span></button></div>
+<div class="t" id="pt">24 votes · Tap to vote · closes in 2 days</div>
+<div class="act"><button id="like"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.500-7 10-7 10z"/></svg><span id="lc">18</span> likes</button><button><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>6 comments</button><button id="save"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>Save</button></div>
+</article>
+<div class="sec"><h2>Featured services</h2><a href="#services">Explore</a></div>
+<div class="g"><div class="cat"><div class="th" style="background:#d92735"></div><b>Brand identity</b><span class="t">From 150,000 IQD</span></div><div class="cat"><div class="th" style="background:#1b1b1f"></div><b>Web development</b><span class="t">From 250,000 IQD</span></div></div>
+</section>
+
+<section class="v" id="services">
+<div class="k">WHAT DO YOU NEED?</div><h1>Find your next creative partner.</h1>
+<label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><input type="search" id="sq" placeholder="Search services" aria-label="Search services"></label>
+<div class="hero"><div style="font-size:11px;color:#ff8a93;letter-spacing:.08em;font-weight:600;position:relative;z-index:1">CIRCLE SERVICES</div><p style="font-size:22px;font-weight:800;line-height:1.2;margin:8px 0">Good ideas deserve great people.</p><p class="t" style="color:#c9c9cd">Trusted Iraqi talent for your next big move.</p></div>
+<div class="sec" style="margin-top:0"><h2>Explore categories</h2><span class="t">6 categories</span></div>
+<div class="g" id="cats">
+<div class="cat"><div class="th" style="background:#fdeaec"></div><b>Website Development</b><span class="t">Sites, stores and platforms</span></div>
+<div class="cat"><div class="th" style="background:#e9eaff"></div><b>Mobile App Development</b><span class="t">iOS and Android apps</span></div>
+<div class="cat"><div class="th" style="background:#e3f4ea"></div><b>UI/UX Design</b><span class="t">Research and product design</span></div>
+<div class="cat"><div class="th" style="background:#fff0dc"></div><b>Graphic Design</b><span class="t">Campaigns and content</span></div>
+<div class="cat"><div class="th" style="background:#0b0b0d"></div><b>Branding and Identity</b><span class="t">Logos and guidelines</span></div>
+<div class="cat"><div class="th" style="background:#ececee"></div><b>Digital Solutions</b><span class="t">Automation and custom tools</span></div>
+</div>
+</section>
+
+<section class="v" id="freelancers">
+<div class="k">THE PEOPLE BEHIND THE WORK</div><h1>Find your people.</h1>
+<div class="promo"><svg viewBox="0 0 24 24" aria-hidden="true" style="color:var(--red)"><path d="M12 3l2.5 5.5 6 .7-4.4 4.100 1.200 6-5.300-3-5.300 3 1.200-6L3.500 9.200l6-.7z"/></svg><div><b>Freelancer membership: first 2 months free</b><div class="t">After the trial, activate a paid plan to stay listed. Clients browse and request services free.</div></div></div>
+<label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><input type="search" placeholder="Search Iraqi freelancers" aria-label="Search freelancers"></label>
+<div class="chips"><button class="chip on">All talent</button><button class="chip">Design</button><button class="chip">Photography</button><button class="chip">Development</button></div>
+<div class="sec"><h2>Popular this week</h2><a href="#freelancers">See all</a></div>
+<div class="c"><div class="row"><div class="av">N</div><div style="flex:1"><b>Noor Hassan <span class="r">✓</span></b><div class="t">Brand designer · Baghdad</div></div><b style="font-size:12px">★ 4.9</b></div><span class="sk">Branding</span><span class="sk">UI design</span><span class="sk">Packaging</span><div class="w"><div style="background:#d92735"></div><div style="background:#1b1b1f"></div><div style="background:#ececee"></div></div></div>
+<div class="c"><div class="row"><div class="av" style="background:#e9eaff;color:#4b4fd6">A</div><div style="flex:1"><b>Ali Kareem <span class="r">✓</span></b><div class="t">Product photographer · Baghdad</div></div><b style="font-size:12px">★ 5.0</b></div><span class="sk">Photography</span><span class="sk">Food</span><span class="sk">Retouching</span><div class="w"><div style="background:#1b1b1f"></div><div style="background:#8f0c16"></div><div style="background:#ececee"></div></div></div>
+</section>
+
+<section class="v" id="profile">
+<div class="cover"></div>
+<div class="row" style="justify-content:space-between;align-items:flex-end;margin-top:-30px;padding:0 6px"><div class="av" style="width:68px;height:68px;border:4px solid #fff;font-size:26px">Z</div><button class="ghost">Edit profile</button></div>
+<div style="margin-top:8px;font-size:20px;font-weight:800">Zahraa Al-Mousawi <span class="r" style="font-size:16px">✓</span></div>
+<div class="t">@zahraa.creates</div>
+<p style="font-size:13px;margin:8px 0 0">Visual designer building thoughtful identities for Iraqi businesses. Baghdad, Iraq.</p>
+<div class="tabs" role="tablist"><button class="on">Portfolio</button><button>CV</button><button>Posts</button><button>Saved</button></div>
+<div class="sec" style="margin-top:0"><h2>Selected work</h2><a href="#profile">View all</a></div>
+<div class="row" style="gap:8px"><div class="tile" style="background:#8f0c16">Nahrain Roastery</div><div class="tile" style="background:#1b1b1f">From Our Land</div><div class="tile" style="background:#d92735">Baghdad Season</div></div>
+<h2 style="margin:16px 0 4px">Professional information</h2>
+<div class="li"><span>Visual Identity Designer</span><span>Profession</span></div><div class="li"><span>Baghdad, Iraq</span><span>Location</span></div><div class="li"><span>Arabic · English</span><span>Languages</span></div>
+<div style="margin-top:12px;border-radius:12px;background:#eaf6ef;color:#14663d;font-size:13px;font-weight:600;padding:10px 12px;display:flex;justify-content:space-between"><span>✓ Identity verified</span><span style="font-weight:500">Account status</span></div>
+<h2 style="margin:16px 0 0">Account settings</h2>
+<div class="s"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Account preferences</div>
+<div class="s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>Privacy and security</div>
+<div class="s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.5 5.5 6 .7-4.4 4.100 1.200 6-5.300-3-5.300 3 1.200-6L3.500 9.200l6-.7z"/></svg><span style="flex:1">Freelancer membership</span><span class="t">Free trial · 2 months</span></div>
+</section>
+
+</main>
+<nav aria-label="Main">
+<a href="#home" data-n="home"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></i>Home</a>
+<a href="#services" data-n="services"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M9 7.5V5.5h6v2M3 13h18"/></svg></i>Services</a>
+<a href="#freelancers" data-n="freelancers"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 19c.5-3.5 3-5 6-5s5.500 1.500 6 5M16 14.500c2.500 0 4.300 1.300 5 4.500"/></svg></i>Freelancers</a>
+<a href="#profile" data-n="profile"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.7-4 3.500-6 7-6s6.300 2 7 6"/></svg></i>Profile</a>
+</nav>
+</div>
+<script>
+(function(){
+var ids=["home","services","freelancers","profile"];
+function show(){var h=(location.hash||"#home").slice(1);if(ids.indexOf(h)<0)h="home";
+ids.forEach(function(i){document.getElementById(i).classList.toggle("on",i===h)});
+document.querySelectorAll("nav a").forEach(function(a){if(a.dataset.n===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+window.scrollTo(0,0)}
+window.addEventListener("hashchange",show);show();
+var votes=[15,8],voted=-1;
+function draw(){var t=votes[0]+votes[1];document.querySelectorAll("#poll button").forEach(function(b,i){var p=Math.round(votes[i]/t*100);b.querySelector("u").style.width=p+"%";b.querySelector(".pc").textContent=p+"%"});document.getElementById("pt").textContent=t+" votes · closes in 2 days"}
+document.querySelectorAll("#poll button").forEach(function(b){b.addEventListener("click",function(){var i=+b.dataset.v;if(voted===i)return;if(voted>=0)votes[voted]--;votes[i]++;voted=i;draw()})});
+draw();
+var like=document.getElementById("like"),lc=document.getElementById("lc");
+like.addEventListener("click",function(){var on=like.classList.toggle("on");lc.textContent=on?19:18});
+document.getElementById("save").addEventListener("click",function(){this.classList.toggle("on")});
+document.getElementById("sq").addEventListener("input",function(e){var q=e.target.value.toLowerCase();document.querySelectorAll("#cats .cat").forEach(function(c){c.style.display=c.textContent.toLowerCase().indexOf(q)<0?"none":""})});
+document.querySelectorAll(".chips .chip").forEach(function(c){c.addEventListener("click",function(){document.querySelectorAll(".chips .chip").forEach(function(x){x.classList.remove("on")});c.classList.add("on")})});
+document.querySelectorAll(".tabs button").forEach(function(c){c.addEventListener("click",function(){document.querySelectorAll(".tabs button").forEach(function(x){x.classList.remove("on")});c.classList.add("on")})});
+})();
+</script>
+</body>
+</html>

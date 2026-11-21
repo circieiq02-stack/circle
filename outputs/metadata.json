@@ -1,0 +1,8 @@
+{
+  "name": "TabSplit",
+  "description": "Split-screen AI receipt parser, natural language bill splitting chat, and integrated payment gateway.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

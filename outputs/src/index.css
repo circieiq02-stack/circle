@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --circle-red: #D00205;
+    --circle-red-hover: #AD0204;
+    --circle-red-tint: #FBE9E9;
+    --circle-red-soft: #F7D8D8;
+    --circle-ink: #050507;
+    --circle-charcoal: #1B1B1F;
+    --circle-soft-white: #F6F4F1;
+    --circle-muted: #5A5A60;
+    --circle-line: #E2DFDA;
+    --circle-canvas: #F6F4F1;
+    --font-display: "Bricolage Grotesque", "IBM Plex Sans Arabic", system-ui, sans-serif;
+    --font-sans: "Plus Jakarta Sans", "Inter", "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+    --font-arabic-display: "IBM Plex Sans Arabic", system-ui, sans-serif;
+    --font-arabic: "IBM Plex Sans Arabic", "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--circle-soft-white);
+    color: var(--circle-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html[dir="rtl"] body {
+    font-family: var(--font-arabic);
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--circle-red);
+    outline-offset: 2px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+html[dir="rtl"] .font-display {
+  font-family: var(--font-arabic-display);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.font-kufi {
+  font-family: var(--font-arabic-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Signature faceted crimson shard motif echoing the uploaded CIRCLE mark */
+.circle-shard {
+  clip-path: polygon(38% 0, 100% 24%, 88% 72%, 56% 100%, 0 58%);
+}
+
+/* Clean custom scrollbar for 9:16 mobile screen viewports */
+.mobile-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+.mobile-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mobile-scroll::-webkit-scrollbar-thumb {
+  background: rgba(5, 5, 7, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
